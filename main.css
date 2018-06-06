@@ -1,0 +1,173 @@
+#content {
+	text-align: center;
+	padding-top: 20%;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+html {
+	height: 100%;
+	weight: 100%;
+	font-family: "Lato";
+}
+
+#main{
+	background: url(http://www.telenextsystems.com/uploads/2/2/8/2/22827496/header_images/1378038560.jpg);
+	background-size: cover;
+}
+
+#t {
+	font-weight: 700;
+	font-size: 2em;
+	color: #2c95c9;
+}
+
+#n{
+	font-weight: 700;
+	font-size: 2em;
+	color: black;
+}
+
+h3 {
+	font-weight: 200;
+	color: black;
+}
+
+hr {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid black;
+}
+
+.btn .btn-default .btn-lg {
+	box-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.burp {
+	/*background: transparent;*/
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding-top: 3%;
+    vertical-align: baseline;
+}
+
+#hdr-search fieldset {
+    position: relative;
+    /* -webkit-transition: none; */
+    -moz-transition: none;
+    transition: none;
+}
+
+.drop {
+    cursor: default;
+    display: none;
+    left: -14px;
+    position: absolute;
+    top: 100%;
+    width: 210px;
+
+}
+.navbar-inverse {
+    background-color: transparent ;
+    border-color: transparent;
+}
+
+li a {
+	margin-top: 20px;
+	margin-right: 40px;
+}
+
+a img {
+	margin-right: 20px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: black;
+}
+
+form strong{
+  color: red;
+}
+
+input{
+  width: 350px;
+  height: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+select{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+form{
+	margin-top: 30px;
+	font-size: 1.25em;
+	margin-left: 50px;
+}
+
+#file{
+	margin-top: 10px;
+}
+
+#submit{
+  margin-top: 20px;
+	margin-left: 300px;
+  text-align: center;
+  height: 40px;
+  width: 150px;
+}
+
+#signup{
+	margin-top: 100px;
+}
+
+#login{
+	margin-top: 200px;
+	text-align: center;
+	font-size: 1.25em;
+}
+
+#margin{
+	margin-top: 7px;
+}
+
+#Login{
+	margin-top: 60px;
+  text-align: center;
+  height: 40px;
+  width: 113px;
+	margin-left: 500px;
+}
+
+#btn{
+	margin-top: 35px;
+	background-color: white;
+	border: none;
+}
+
+a{
+	text-decoration: none !important;
+	color: inherit;
+}
+
+#table{
+	margin-top: 120px;
+}
+
+#profile{
+	margin-top: 150px;
+	font-size: 1.25em;
+}
+
+#daata{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
