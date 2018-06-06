@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee's List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/main.css">
+    <script type="text/javascript" src="../static/table.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="    https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+</head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="{{url_for('index')}}"><img src="" width="150px" height="80px"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="#"><strong>Home</strong></a></li>
+            <li><a href="#"><strong>About</strong></a></li>
+            <li><a href="#"><strong>Contact</strong></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{url_for('profileview', id=Name)}}"><strong>Hey, {{Name}} </strong><i class="fas fa-user"></i></a></li>
+            <li><a href="{{url_for('logout')}}"><strong>Logout</strong><i class=""></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" id="table">
+      <table class="table table-stripped table-bodered table-hover" id="employees">
+        <thead>
+          <tr>
+            <th>Employee Names</th>
+            <th>Employee ID</th>
+            <th>Email ID</th>
+            <th>Gender</th>
+            <th>Qualification</th>
+            <th>College</th>
+            <th>Profile Picture</th>
+            <th>Edit Employee</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for employee in empl %}
+          <tr>
+            <td>{{ employee.Names }}</td>
+            <td>{{ employee.Employee_id }}</td>
+            <td>{{ employee.Email }}</td>
+            <td>{{ employee.Gender }}</td>
+            <td>{{ employee.Level }}</td>
+            <td>{{ employee.College }}</td>
+            <td><img src="http://127.0.0.1:8887/{{employee.Image}}" width="150px" height ="80px"></td>
+            <td><a href="{{ url_for('editemployee', id=employee.Employee_id) }}">Edit</a></td>
+          </tr>
+          {% endfor %}
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  </body>
+</html>

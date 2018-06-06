@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/main.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="{{url_for('index')}}"><img src="" width="150px" height="80px"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="#"><strong>Home</strong></a></li>
+            <li><a href="#"><strong>About</strong></a></li>
+            <li><a href="#"><strong>Contact</strong></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{url_for('signup')}}"><strong>Sign Up </strong><i class="fas fa-user-plus"></i></a></li>
+            <li><a href="{{url_for('login')}}"><strong>Login </strong><i class="fas fa-user"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <form class="data" action="{{url_for('login')}}" method="post" enctype="multipart/form-data">
+      <div class="container" id="login">
+        <div class="col-md-6" id="margin">Employee ID : </div>
+        <div class="col-md-6"><input type="number" title="Employee ID" name="Employee_ID" class="selectpicker form-control" placeholder="Enter your Employee ID here" min="0" required pattern="[0-9]{5}" required></div>
+        <div class="col-md-6" id="margin">Password : </div>
+        <div class="col-md-6"><input type="password" title="Password" name="Password" class="selectpicker form-control" placeholder="Enter your password here" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></div>
+        <button type="submit" name="Login" class="selectpicker form-control" id="Login">Login</button>
+      </div>
+    </form>
+  </body>
+</html>

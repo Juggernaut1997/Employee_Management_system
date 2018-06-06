@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/main.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <title>Name</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+    $( title ).tooltip();
+    } );
+  </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="{{url_for('index')}}"><img src="" width="150px" height="80px"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="#"><strong>Home</strong></a></li>
+            <li><a href="#"><strong>About</strong></a></li>
+            <li><a href="#"><strong>Contact</strong></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{url_for('signup')}}"><strong>Sign Up </strong><i class="fas fa-user-plus"></i></a></li>
+            <li><a href="{{url_for('login')}}"><strong>Login </strong><i class="fas fa-user"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" id="signup">
+      <form class="data" action="{{url_for('signup')}}" method="post" enctype="multipart/form-data">
+        <div class="col-md-6">Employee Name<strong>*</strong> : </div>
+        <div class="col-md-6"><input type="text" name="Name" class="selectpicker form-control" placeholder="Enter your name here" required></div>
+        <div class="col-md-6">Employee ID<strong>*</strong> : </div>
+        <div class="col-md-6"><input type="number" title="Enter your Employee ID here which should be of length '5'." class="selectpicker form-control" name="Employee_ID" placeholder="Enter your Employee ID here" min="0" required pattern="[0-9]{5}" required></div>
+        <div class="col-md-6">Email Address<strong>*</strong> : </div>
+        <div class="col-md-6"><input type="text" title="" class="selectpicker form-control" name="Email_ID" placeholder="Enter your e-mail address here" required></div>
+        <div class="col-md-6">Password<strong>*</strong> : </div>
+        <div class="col-md-6"><input type="password" name="Password" class="selectpicker form-control" placeholder="Enter your password here" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain 8 or more characters which includes: one or more number, one or more uppercase & lowercase letter and one or more special character" required></div>
+        <div class="col-md-6">Gender<strong>*</strong> : </div>
+        <div class="col-md-6">
+          <select placeholder="Gender" name="Gender" class="selectpicker form-control" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="col-md-6">Highest Qualification<strong>*</strong> : </div>
+        <div class="col-md-6">
+          <select placeholder="Qualification" name="Qualification" class="selectpicker form-control" required>
+            <option value="">Select</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Bachelor">Bachelor</option>
+            <option value="Master">Master</option>
+            <option value="Honours">Honours</option>
+          </select>
+        </div>
+        <div class="col-md-6">Undergraduation College<strong>*</strong> : </div>
+        <div class="col-md-6"><input type="text" name="College" class="selectpicker form-control" placeholder="Enter your College Name here" required></div>
+        <div class="col-md-6">Profile Picture<strong>*</strong> : </div>
+        <div class="col-md-6"><input type="file" title="" name="file" id="file" multiple required></div>
+        <button type="submit" name="submit" class="selectpicker form-control" id="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/main.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="{{url_for('index')}}"><img src="" width="150px" height="80px"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="#"><strong>Home</strong></a></li>
+            <li><a href="#"><strong>About</strong></a></li>
+            <li><a href="#"><strong>Contact</strong></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{url_for('logout')}}"><strong>Logout</strong><i class=""></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" id="signup">
+      <form class="data" action="{{url_for('editemployee', id=eid)}}" method="post" enctype="multipart/form-data">
+        <div class="col-md-6">Employee Name : </div>
+        <div class="col-md-6"><input type="text" name="Name" value="{{Name}}" class="selectpicker form-control" title="Name"></div>
+        <div class="col-md-6">Email Address : </div>
+        <div class="col-md-6"><input type="text" title="E-mail Address" class="selectpicker form-control" name="Email_ID" value="{{Email}}"></div>
+        <div class="col-md-6">Gender : </div>
+        <div class="col-md-6">
+          <select name="Gender" class="selectpicker form-control">
+            <option value="Male"{% if Gender=="Male" %} selected {% endif %}>Male</option>
+            <option value="Female"{% if Gender=="Female" %} selected {% endif %}>Female</option>
+            <option value="Other"{% if Gender=="Other" %} selected {% endif %}>Other</option>
+          </select>
+        </div>
+        <div class="col-md-6">Highest Qualification : </div>
+        <div class="col-md-6">
+          <select name="Qualification" class="selectpicker form-control">
+            <option value="Diploma"{% if Level=="Diploma" %} selected {% endif %}>Diploma</option>
+            <option value="Bachelor"{% if Level=="Bachelor" %} selected {% endif %}>Bachelor</option>
+            <option value="Master"{% if Level=="Master" %} selected {% endif %}>Master</option>
+            <option value="Honours"{% if Level=="Honours" %} selected {% endif %}>Honours</option>
+          </select>
+        </div>
+        <div class="col-md-6">Undergraduation College : </div>
+        <div class="col-md-6"><input type="text" name="College" class="selectpicker form-control" value="{{Col}}"></div>
+        <button type="submit" name="update" class="selectpicker form-control" id="submit">Update</button>
+      </form>
+    </div>
